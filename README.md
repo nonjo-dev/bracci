@@ -56,8 +56,9 @@ branch → Branch: main / (root)**.
 - Loggan har ingen alfa-kanal; bakgrunden #f5f4f0 är inbakad i
   bilden. Det fungerar på ljust underlag men inte på den mörka
   footern, där en genomskinlig logga skulle behövas.
-- Beställningar görs via Instagram. Sök och ersätt
-  `DITT_INSTAGRAM_NAMN` på undersidorna.
+- Beställningar görs via Instagram: [@bracci_uf](https://www.instagram.com/bracci_uf/).
+- TikTok-länkarna i footern är tomma (`href="#"`) och väntar på ert
+  TikTok-konto. Ta bort dem om ni inte har ett.
 - GitHub Pages styr cache och saknar HTTP-huvud. Filerna får
   Netlifys standardcaching, som i praktiken innebär att en
   besökare kan behöva hard refresh (Ctrl+Shift+R) efter en
