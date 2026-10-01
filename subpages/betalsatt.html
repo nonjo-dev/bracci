@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Braccì UF | Betalsätt</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../img/logga.png">
+
+    <!-- Google Font
+         Utan den här laddningen faller loggan tillbaka på Times New
+         Roman, eftersom .logo i style.css beror på "Playfair Display"
+         och bara har "serif" som reserv. Mätt: loggans "Bracci" blev
+         278px bred med reservfonten mot 292px med rätt font. Samma
+         sak händer med alla rubriker på sidan. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="../index.html" class="logo">
+        <div class="bla">
+            <div>Bracc<span>ì</span></div>
+            <div> UF</div>
+        </div>
+    </a>
+
+    <nav id="mainnav">
+        <a href="../index.html">Home</a>
+        <a href="armband.html">Armband</a>
+        <a href="omoss.html">Om oss</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="betalsatt.html">Betalsätt</a>
+    </nav>
+
+    <button class="menu-button" type="button" onclick="toggleMenu()"
+        aria-label="Öppna meny" aria-expanded="false" aria-controls="mainnav">
+        <span class="menu-icon" aria-hidden="true"></span>
+    </button>
+
+</header>
+
+
+<main class="payment-page">
+
+    <section class="payment-hero">
+        <p class="eyebrow">BRACCÌ</p>
+
+        <h1>
+            Beställning &<br>
+            <span>Betalning</span>
+        </h1>
+
+        <p>
+            Här hittar du information om hur du beställer
+            ditt armband och hur betalningen fungerar.
+        </p>
+    </section>
+
+
+    <section class="payment-content">
+
+        <div class="payment-box">
+            <span class="payment-number">01</span>
+
+            <div>
+                <h2>Så beställer du</h2>
+
+                <p>
+                    Alla våra beställningar görs via vårt Instagram-konto.
+                    Gå in på vår Instagram och skicka ett meddelande till oss
+                    med vilket armband du vill beställa.
+                </p>
+
+                <a
+                    href="https://www.instagram.com/DITT_INSTAGRAM_NAMN/"
+                    target="_blank"
+                    class="gold-button"
+                >
+                    Besök vår Instagram
+                    <span>↗</span>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="payment-box">
+            <span class="payment-number">02</span>
+
+            <div>
+                <h2>Betalning</h2>
+
+                <p>
+                    Vi erbjuder just nu endast betalning via Swish.
+                    När din beställning är bekräftad får du information
+                    om hur betalningen genomförs.
+                </p>
+
+                <div class="payment-method">
+                    <strong>SWISH</strong>
+                    <span>Vårt enda betalningsalternativ</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="payment-box">
+            <span class="payment-number">03</span>
+
+            <div>
+                <h2>Bekräftelse</h2>
+
+                <p>
+                    När betalningen är genomförd bekräftar vi din beställning
+                    via Instagram. Vi återkommer sedan med information om
+                    när och hur du får ditt armband.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- LOGO -->
+        <div class="footer-brand">
+            <a href="../index.html">
+                <picture>
+                    <source srcset="../img/logga.webp" type="image/webp">
+                    <img src="../img/logga.png" alt="Braccì logo" width="800" height="800">
+                </picture>
+            </a>
+
+            <p>
+                Armband med personlig stil.
+                Enkla detaljer som gör skillnad.
+            </p>
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <div class="footer-column">
+            <h4>SHOP</h4>
+
+            <a href="../index.html">Home</a>
+            <a href="../subpages/armband.html">Armband</a>
+            <a href="betalsatt.html">Betalsätt</a>
+        </div>
+
+
+        <!-- INFORMATION -->
+        <div class="footer-column">
+            <h4>INFORMATION</h4>
+
+            <a href="../subpages/omoss.html">Om oss</a>
+            <a href="../subpages/kontakt.html">Kontakt</a>
+        </div>
+
+
+        <!-- SOCIAL -->
+        <div class="footer-column">
+            <h4>FÖLJ OSS</h4>
+
+            <a href="https://www.instagram.com/DITT_INSTAGRAM_NAMN/" target="_blank">
+                Instagram ↗
+            </a>
+
+            <a href="#">TikTok ↗</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-line"></div>
+
+
+    <div class="footer-bottom">
+        <p>© 2026 Braccì UF</p>
+
+        <p>
+            Made with intention.
+        </p>
+
+        <a href="betalsatt.html">
+            Betalning via Swish
+        </a>
+    </div>
+
+</footer>
+
+
+<script src="../script.js"></script>
+
+</body>
+</html>

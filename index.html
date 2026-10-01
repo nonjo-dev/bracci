@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Braccì UF | Premium Armband</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/logga.png">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            <div class="bla">
+                <div>Bracc<span>ì</span></div>
+                <div> UF</div>
+            </div>
+
+        </a>
+
+
+        <nav id="mainnav">
+
+            <a href="index.html">Home</a>
+            <a href="subpages/armband.html">Armband</a>
+            <a href="subpages/omoss.html">Om oss</a>
+            <a href="subpages/kontakt.html">Kontakt</a>
+            <a href="subpages/betalsatt.html">Betalsätt</a>
+        </nav>
+
+        <button class="menu-button" type="button" onclick="toggleMenu()"
+            aria-label="Öppna meny" aria-expanded="false" aria-controls="mainnav">
+            <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">BRACCÌ UF COLLECTION</p>
+
+            <h1>Wear your<br><span>story.</span></h1>
+
+            <p class="hero-text">
+                Moderna armband skapade för att ge din stil
+                en personlig touch.
+            </p>
+
+            <a href="subpages/armband.html" class="main-button magnetic">
+                Utforska kollektionen
+                <span>→</span>
+            </a>
+
+        </div>
+
+        <!-- Loggan ligger som barn i den gråa cirkeln, så flexbox
+             centrerar den mitt i cirkeln utan att någon siffra
+             behöver hållas i synk med cirkelns placering.
+
+             webp-varianter först: logga.webp väger 14,5 KB mot
+             logga.png:s 635 KB, och alla webbläsare som stöder
+             picture-elementet tar den. PNG:en ligger kvar som
+             fallback. -->
+        <div class="hero-circle">
+            <picture>
+                <source srcset="img/logga.webp" type="image/webp">
+                <img src="img/logga.png" alt="Braccì" class="hero-logo" width="800" height="800">
+            </picture>
+        </div>
+
+    </section>
+
+
+    <!-- BRAND INFO -->
+    <section class="intro">
+
+        <p class="section-label">BRACCÌ</p>
+
+        <h2>
+            Simple design.<br>
+            <span>Strong identity.</span>
+        </h2>
+
+        <p>
+            Vi tror att ett armband är mer än bara en accessoar.
+            Det är något du bär för att uttrycka vem du är.
+        </p>
+
+    </section>
+
+
+   <section class="reviews-section reveal">
+
+    <div class="section-top">
+        <div>
+            <p class="rew">WHAT PEOPLE SAY</p>
+            <h2 class="rew">Reviews</h2>
+        </div>
+    </div>
+
+    <div class="reviews-viewport">
+
+        <div class="reviews-wrapper">
+        <div class="review-card">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Armbandet känns riktigt bra och passar till nästan allt.
+                    Jag använder mitt varje dag."
+                </p>
+
+                <img
+                    src="img/armband.avif"
+                    alt="Braccì armband"
+                    class="review-image"
+                    onclick="openReviewImage(this)"
+                >
+
+                <h4>Mäktig Binua</h4>
+                <span>Verified customer</span>
+
+            </div>
+
+            <div class="review-card">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Armbandet känns riktigt bra och passar till nästan allt.
+                    Jag använder mitt varje dag."
+                </p>
+
+                <img
+                    src="img/armband1.avif"
+                    alt="Braccì armband"
+                    class="review-image"
+                    onclick="openReviewImage(this)"
+                >
+
+                <h4>Lucas Andersson</h4>
+                <span>Verified customer</span>
+
+            </div>
+
+            <div class="review-card">
+
+                <div class="stars">★★★★</div>
+
+                <p>
+                    "Köpte ett till mig själv och ett till min bror.
+                    Vi är båda väldigt nöjda."
+                </p>
+
+                <img
+                    src="img/armband.avif"
+                    alt="Braccì armband"
+                    class="review-image"
+                    onclick="openReviewImage(this)"
+                >
+
+                <h4>Aleks Lukic</h4>
+                <span>Verified customer</span>
+
+            </div>
+
+            <div class="review-card">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Snyggt, enkelt och bekvämt. Det är precis den typen
+                    av armband jag letade efter."
+                </p>
+
+                <img
+                    src="img/armband1.avif"
+                    alt="Braccì armband"
+                    class="review-image"
+                    onclick="openReviewImage(this)"
+                >
+
+                <h4>Alva Stål</h4>
+                <span>Verified customer</span>
+
+            </div>
+
+            <div class="review-card">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Jag blev positivt överraskad av kvaliteten.
+                    Kommer definitivt köpa igen."
+                </p>
+
+                <img
+                    src="img/armband.avif"
+                    alt="Braccì armband"
+                    class="review-image"
+                    onclick="openReviewImage(this)"
+                >
+
+                <h4>Oscar Lindberg</h4>
+                <span>Verified customer</span>
+
+            </div>
+
+            <div class="review-card">
+
+                <div class="stars">★★★★</div>
+
+                <p>
+                    "Ett riktigt snyggt armband som känns exklusivt
+                    utan att vara överdrivet."
+                </p>
+
+                <img
+                    src="img/armband1.avif"
+                    alt="Braccì armband"
+                    class="review-image"
+                    onclick="openReviewImage(this)"
+                >
+
+                <h4>Angelo Palmen</h4>
+                <span>Verified customer</span>
+
+            </div>
+
+            <!-- Kopian av korten skapas i script.js så att scrollen blir sömlös -->
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- FEATURE -->
+    <section class="feature">
+
+        <div class="feature-image">
+            <div class="feature-bracelet">
+                <picture>
+                    <source srcset="img/logga.webp" type="image/webp">
+                    <img src="img/logga.png" alt="Braccì" width="800" height="800">
+                </picture>
+            </div>
+
+        </div>
+
+        <div class="feature-content">
+
+            <p class="section-label">THE BRACCÌ IDEA</p>
+
+            <h2>
+                Made to be<br>
+                <span>remembered.</span>
+            </h2>
+
+            <p>
+                Våra armband är designade med fokus på enkelhet,
+                detaljer och personlig stil. Oavsett om du bär
+                det varje dag eller vid ett speciellt tillfälle
+                ska det kännas som ditt.
+            </p>
+
+            <a href="subpages/omoss.html" class="text-link magnetic">
+                Läs mer om Braccì →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <p class="section-label">ABOUT BRACCÌ</p>
+
+            <h2>More than<br><span>an accessory.</span></h2>
+
+            <p>
+                Braccì är ett företag som skapar och säljer
+                moderna armband för personer som vill uttrycka
+                sin personliga stil.
+            </p>
+
+            <p>
+                Vårt mål är att kombinera enkel design med
+                detaljer som gör varje armband speciellt.
+            </p>
+
+        </div>
+
+        <div class="about-number">
+            01
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div>
+
+            <p class="section-label">GET IN TOUCH</p>
+
+            <h2>
+                Har du en fråga?<br>
+                <span>Kontakta oss.</span>
+            </h2>
+
+        </div>
+
+        <div class="contact-info">
+
+            <p>Email</p>
+            <a href="mailto:hello@bracci.se">
+                hello@bracci.se
+            </a>
+
+            <p>Instagram</p>
+            <a href="#">
+                @bracci
+            </a>
+
+        </div>
+
+    </section>
+
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- LOGO -->
+        <div class="footer-brand">
+            <a href="index.html">
+                <picture>
+                    <source srcset="img/logga.webp" type="image/webp">
+                    <img src="img/logga.png" alt="Braccì" width="800" height="800">
+                </picture>
+            </a>
+
+            <p>
+                Armband med personlig stil.
+                Enkla detaljer som gör skillnad.
+            </p>
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <div class="footer-column">
+            <h4>SHOP</h4>
+
+            <a href="index.html">Home</a>
+            <a href="subpages/armband.html">Armband</a>
+            <a href="subpages/betalsatt.html">Betalsätt</a>
+        </div>
+
+
+        <!-- INFORMATION -->
+        <div class="footer-column">
+            <h4>INFORMATION</h4>
+
+            <a href="subpages/omoss.html">Om oss</a>
+            <a href="subpages/kontakt.html">Kontakt</a>
+        </div>
+
+
+        <!-- SOCIAL -->
+        <div class="footer-column">
+            <h4>FÖLJ OSS</h4>
+
+            <a href="#" target="_blank" rel="noopener noreferrer">
+                Instagram ↗
+            </a>
+
+            <a href="#">TikTok ↗</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-line"></div>
+
+
+    <div class="footer-bottom">
+        <p>© 2026 Braccì UF</p>
+
+        <p>
+            Made with intention.
+        </p>
+
+        <a href="subpages/betalsatt.html">
+            Betalning via Swish
+        </a>
+    </div>
+
+</footer>
+
+    <script src="script.js"></script>
+<div class="image-popup" id="image-popup" onclick="closeReviewImage()">
+
+    <button onclick="closeReviewImage()">×</button>
+
+    <img id="popup-image" src="" alt="Förstorad bild">
+
+</div>
+</body>
+
+</html>

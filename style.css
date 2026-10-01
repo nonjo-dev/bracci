@@ -1,0 +1,3538 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    /* Navbaren är position: fixed. Utan detta hamnar ankarlänkar
+       (t.ex. loggan -> #home) under den när man klickar. */
+    scroll-padding-top: var(--nav-h);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f4f0;
+    color: #111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    height: 80px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(245, 244, 240, 0.95);
+
+    border-bottom: 1px solid #ddd;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.bla {
+    display: flex;
+
+    gap: 7px;
+}
+
+.logo {
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+    display: flex;
+    font-weight: bold;
+
+}
+
+.logo span {
+    font-style: italic;
+}
+
+.navbar nav {
+    display: flex;
+
+    gap: 35px;
+}
+
+.navbar nav a {
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 10%;
+
+    background:
+        radial-gradient(circle at 80% 50%,
+            #dedbd2,
+            transparent 35%);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title,
+.section-label {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(60px, 9vw, 120px);
+
+    line-height: 0.9;
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    font-style: italic;
+
+    color: #777;
+}
+
+.hero p:not(.small-title) {
+    color: #666;
+
+    max-width: 420px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 16px 25px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+}
+
+
+/* INTRO */
+
+.intro {
+    padding: 130px 10%;
+
+    max-width: 900px;
+}
+
+.intro h2 {
+    font-family: Georgia, serif;
+
+    font-size: 60px;
+
+    font-weight: normal;
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+}
+
+.intro h2 span {
+    color: #777;
+
+    font-style: italic;
+}
+
+.intro p:last-child {
+    color: #666;
+
+    line-height: 1.8;
+
+    max-width: 500px;
+}
+
+
+/* PRODUCTS */
+
+.products-section {
+    padding: 100px 7%;
+
+    min-height: 80vh;
+}
+
+.page-title {
+    font-family: Georgia, serif;
+
+    font-size: 70px;
+
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+.page-text {
+    color: #777;
+
+    margin-bottom: 60px;
+}
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+
+    padding: 15px;
+
+    transition: 0.4s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    height: 350px;
+
+    background: #dedbd4;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.product-card h2 {
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    color: #888;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.product-card strong {
+    font-size: 14px;
+}
+
+
+/* ABOUT */
+
+.about-page {
+    /* min-height: 80vh tvingade sektionen till 80% av skärmhöjden,
+       fast innehållet bara är ~370px. Mätning gav 267px tomrum på
+       desktop och 420px på tablet - samma problem som på
+       kontaktsidan, där båda sektionerna har samma bakgrundsfärg
+       och det därför lästes som ett fel. Sektionen växer nu med
+       sitt innehåll istället för att fylla skärmen. */
+    min-height: auto;
+
+    padding: 130px 10%;
+
+    max-width: 1000px;
+
+    /* Behövs för att .hero-decoration ska positionera sig
+       mot sektionen och klippas av den. */
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* Innehållet måste ligga över bakgrundsordet */
+.about-page>.section-label,
+.about-page>h1,
+.about-page>p {
+    position: relative;
+
+    z-index: 1;
+}
+
+.about-page h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    line-height: 0.95;
+
+    font-weight: normal;
+
+    margin-bottom: 50px;
+}
+
+.about-page h1 span {
+    display: block;
+
+    color: #777;
+
+    font-style: italic;
+}
+
+.about-page>p:not(.section-label) {
+    max-width: 600px;
+
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+/* Ingress - större än brödtexten, första stycket på sidan */
+.about-page .about-lead {
+    max-width: 640px;
+
+    color: #444;
+
+    font-size: 19px;
+
+    line-height: 1.75;
+
+    margin-bottom: 30px;
+}
+
+/* Bakgrundsord i hero ("BRACCÌ UF"). Återanvänder .hero-decoration
+   från armband.html men justeras för den smalare about-sektionen. */
+.about-page-decor {
+    z-index: 0;
+
+    right: -70px;
+
+    top: 52%;
+
+    /* Två ord i rad - inte så aggressiv negativ letter-spacing
+       som på armband-sidan, där orden är ihoptryckta. */
+    letter-spacing: -4px;
+
+    font-size: clamp(90px, 15vw, 190px);
+}
+
+
+/* =========================
+   OM OSS - VÄRDEN
+========================= */
+
+.about-values {
+    padding: 100px 10% 120px;
+}
+
+.about-values .section-heading h2 span {
+    display: block;
+
+    color: #999;
+    font-style: italic;
+}
+
+.values-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.value-card {
+
+    padding: 40px 35px;
+
+    background: #fff;
+
+    border: 1px solid #e6e6e4;
+
+    transition: border-color .4s;
+}
+
+.value-card:hover {
+    border-color: #d5d5d3;
+}
+
+.value-index {
+
+    display: block;
+
+    margin-bottom: 28px;
+
+    color: #777;
+
+    font-family: "Playfair Display", serif;
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.value-card h3 {
+
+    margin-bottom: 14px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+.value-card p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   OM OSS - BERÄTTELSE
+========================= */
+
+.about-story {
+
+    background: #fff;
+
+    color: #111;
+
+    padding: 120px 10%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 60px;
+}
+
+.about-story-text {
+    max-width: 620px;
+}
+
+.about-story .section-label {
+    color: #777;
+}
+
+.about-story h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 5vw, 66px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    margin-bottom: 35px;
+}
+
+.about-story h2 span {
+    display: block;
+
+    color: #777;
+    font-style: italic;
+}
+
+.about-story-text>p:not(.section-label) {
+
+    max-width: 500px;
+
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.about-story-number {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(90px, 12vw, 170px);
+
+    line-height: .8;
+
+    /* På #111 gav #1e1e1e en siffra som knappast syntes. På vit
+       bakgrund blir motsvarande #e2e2e0 - samma subtila effekt. */
+    color: #e2e2e0;
+}
+
+
+/* =========================
+   OM OSS - CTA
+========================= */
+
+/* .about-cta padding-top 130px + .about-values padding-bottom 120px
+   blev 250px sammanlagt mellan värdena och avslutningen. Eftersom
+   båda sektionerna har samma bakgrundsfärg (#f5f4f0) syntes ingen
+   skillnad mellan dem - det lästes som ett enda stort tomrum.
+   .about-cta padding-top är sänkt till 70px, vilket ger 190px. */
+.about-cta {
+
+    padding: 70px 10% 150px;
+
+    text-align: center;
+}
+
+.about-cta h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.about-cta h2 span {
+    color: #999;
+    font-style: italic;
+}
+
+.about-cta>p {
+
+    max-width: 420px;
+
+    margin: 0 auto 45px;
+
+    color: #777;
+
+    line-height: 1.8;
+}
+
+.about-cta .main-button {
+
+    /* Inline-flex ska inte täcka hela raden när den centreras */
+    width: fit-content;
+}
+
+
+/* CONTACT */
+
+.contact-page {
+    min-height: 80vh;
+
+    padding: 130px 10%;
+}
+
+.contact-page h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    font-weight: normal;
+
+    margin-bottom: 70px;
+}
+
+.contact-page h1 span {
+    color: #777;
+
+    font-style: italic;
+}
+
+.contact-box {
+    display: flex;
+
+    gap: 100px;
+
+    flex-wrap: wrap;
+}
+
+.contact-box h2 {
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+.contact-box p,
+.contact-box a {
+    color: #666;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+.contact-box a {
+    border-bottom: 1px solid #111;
+}
+
+
+/* ---- FAQ ----
+   Två kolumner: rubrik som står kvar när frågorna scrollas
+   förbi, och själva accordionsen bredvid. */
+
+.contact-faq {
+
+    padding: 100px 10% 120px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.25fr;
+
+    gap: 80px;
+
+    align-items: start;
+}
+
+.faq-heading {
+
+    position: sticky;
+
+    top: 120px;
+}
+
+.faq-heading h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 4.5vw, 58px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.faq-heading h2 span {
+
+    display: block;
+
+    color: #999;
+
+    font-style: italic;
+}
+
+.faq-heading p:not(.section-label) {
+
+    color: #777;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+}
+
+
+/* Rubriken är klickbar - blir ingen handpekare av sig
+   själv, så det läggs på. */
+.faq-item summary {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 26px 0;
+
+    border-bottom: 1px solid #e6e6e4;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    transition: color .35s;
+}
+
+/* Webbläsarens egna triangel dold */
+.faq-item summary::-webkit-details-marker {
+
+    display: none;
+}
+
+.faq-item summary:hover {
+
+    color: #a88b5d;
+}
+
+/* Plus som roterar till ett kryss när frågan öppnas */
+.faq-item summary::after {
+
+    content: "+";
+
+    flex-shrink: 0;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    color: #aaa;
+
+    transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+}
+
+.faq-item[open] summary::after {
+
+    transform: rotate(45deg);
+}
+
+.faq-item[open] summary {
+
+    color: #a88b5d;
+}
+
+.faq-answer p {
+
+    color: #777;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    /* Luft mot nästa fråga när svaret är utfällt */
+    padding: 20px 0 30px;
+
+    max-width: 560px;
+}
+
+.faq-item:first-child summary {
+
+    border-top: 1px solid #e6e6e4;
+}
+
+
+/* FOOTER
+   Styling för .site-footer ligger i sektionen "BRACCÌ FOOTER" längre ner.
+   Här fanns tidigare generiska footer-regler som bröt layouten
+   genom att tvinga display:flex och ljus border på den mörka footern. */
+
+
+/* MOBILE */
+
+/* Mobila regler ligger samlade i slutet av filen,
+   se sektionen "RESPONSIV" längst ner. */
+
+html {
+    scroll-behavior: smooth;
+
+    /* Navbaren är position: fixed. Utan detta hamnar ankarlänkar
+       (t.ex. loggan -> #home) under den när man klickar. */
+    scroll-padding-top: var(--nav-h);
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f6f5f2;
+    color: #111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+/* Navbarens höjd läggs här, inte direkt i .navbar, så att både
+   höjden, dropdownens placering och topppaddingen under den kan
+   utgå från samma värde. Satt på :root eftersom även sektionerna
+   på sidan behöver samma tal. */
+:root {
+    --nav-h: 80px;
+}
+
+.navbar {
+    height: var(--nav-h);
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: rgba(246, 245, 242, 0.88);
+    backdrop-filter: blur(15px);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.logo span {
+    font-style: italic;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    opacity: 0.5;
+}
+
+/* Knappen är hela hamburgaren på mobil. Paddingen gör tryckytan
+   större än själva ikonens 22x2px - utan den blir träffytan
+   mindre än de 44px som är riktlinjen för fingre. Ikonen ligger
+   kvar centrerad eftersom den är 22px bred och knappen har
+   samma padding på båda sidor. */
+.menu-button {
+    display: none;
+
+    padding: 14px 11px;
+
+    background: none;
+    border: none;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Tre staplar, rita med ::before/::after kring mittenlinjen.
+   Ren CSS istället för tecknet ☰, så att de går att animera
+   till ett kryss och så att de är oberoende av plattformens
+   emoji-font. */
+.menu-icon {
+    position: relative;
+
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    background: currentColor;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: currentColor;
+
+    transition:
+        transform .35s cubic-bezier(.16, 1, .3, 1),
+        top .35s cubic-bezier(.16, 1, .3, 1);
+}
+
+.menu-icon::before {
+    top: -7px;
+}
+
+.menu-icon::after {
+    top: 7px;
+}
+
+/* Öppet läge: staplarna roteras till ett kryss. Mittenlinjen
+   tas bort så att det inte blir en linje tvärs över. */
+.menu-button[aria-expanded="true"] .menu-icon {
+    background: transparent;
+}
+
+.menu-button[aria-expanded="true"] .menu-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-button[aria-expanded="true"] .menu-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Synlig fokusmarkering - knappen är det enda sättet att nå
+   länkarna på mobil, så måste den gå att nå med tangentbord. */
+.menu-button:focus-visible {
+    outline: 2px solid #c9a96a;
+    outline-offset: 2px;
+}
+
+/* Låser sidan när menyn är öppen. Utan det kan man scrolla
+   vidare bakom menyn, och då rör sig innehållet under den
+   halvgenomskinliga ytan - särskilt tydligt på iOS där
+   adressraden tonas bort när man scrollar.
+
+   Klassen sätts på <html> av JS. Båda elementen behövs:
+   overflow: hidden på <html> ensamt räcker inte i alla
+   webbläsare, och på <body> ensamt rullar vissa sidor ändå. */
+html.menu-open,
+html.menu-open body {
+    overflow: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 10% 80px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 650px;
+
+    /* position: relative är nödvändigt - z-index gäller bara
+       positionerade elementen. Utan relative låter texten på
+       mobil/tablet ligga bakom cirkeln med loggan, eftersom
+       cirkeln är position: absolute. */
+    position: relative;
+    z-index: 2;
+
+    animation: fadeUp 1s ease;
+}
+
+.small-title,
+.section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(65px, 9vw, 130px);
+
+    line-height: 0.9;
+
+    font-weight: 500;
+
+    margin-bottom: 35px;
+
+    /* Tre lager, som en upphöjd knapp: en vit kant ovanför som
+       fångar ljuset, en tight skugga som läser som kontakt med
+       underlaget, och en vid mjuk som gör själva lyften. Den
+       vita kanten är det som gör att texten uppfattas som
+       upphöjd snarare än som en smutsig fläck.
+
+       Arvs ned i <span> ("story.") eftersom text-shadow ärvs,
+       så båda raderna får samma lyft. */
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, .9),
+                 0 4px 8px rgba(0, 0, 0, .20),
+                 0 20px 40px rgba(0, 0, 0, .36);
+}
+
+.hero h1 span,
+.intro h2 span,
+.feature h2 span,
+.about h2 span,
+.contact h2 span {
+    font-style: italic;
+    color: #777;
+}
+
+.hero-text {
+    max-width: 420px;
+
+    line-height: 1.7;
+
+    color: #666;
+
+    margin-bottom: 35px;
+
+    /* Samma upphöjning, värde för värde, som .hero h1 - texten
+       ska kännas som samma slags lyft. Tidigare var den svagare
+       (0.18/0.30 med mindre blur) eftersom jag antog att liten
+       text blev suddig av det, men då syntes den knappt alls. */
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, .9),
+                 0 4px 8px rgba(0, 0, 0, .20),
+                 0 20px 40px rgba(0, 0, 0, .36);
+}
+
+.main-button {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 25px;
+
+    padding: 17px 25px;
+
+    background: #111;
+    color: white;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    background: #292929;
+}
+
+/* Cirkeln är en flex-container så att loggan som barn alltid
+   hamnar mitt i den. Tidigare låg kedjesymbolen som ett eget
+   absolut positionerat syskon, vilket krävde att båda elementen
+   flyttades och skalpades för hand i varje breakpoint. */
+.hero-circle {
+    position: absolute;
+
+    right: 5%;
+    top: 18%;
+
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+
+    background: #e3e0d8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Loggan dyter under sin egen flytanimation, men klipper
+       ändå bort vad som helst råkar sticka ut. */
+    overflow: hidden;
+}
+
+/* När loggan låg direkt i .hero-circle centrerades bilden av
+   cirkelns egen flex. Nu ligger <picture> där emellan (för att
+   kunna erbjuda webp), och picture är display: block - det fyller
+   då hela cirkeln medan bilden bara är 66% av den. Utan den här
+   regeln hamnade loggan cirka 94px till vänster om mitten.
+
+   Flexen på picture flyttar centreringen ett steg inåt: nu
+   centreras bilden inuti picture, som i sin tur är centrerad i
+   cirkeln. Dubbel centrering, men det behövs för varje lager. */
+.hero-circle picture {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+/* logga.png är 800x800, alltså kvadratisk, och har en krämvit
+   bakgrund (#eae3d7) i stället för genomskinlighet. Därför måste
+   bilden själv klippas till en cirkel - annars sticker de
+   fyrkantiga hörnen ut genom den gråa cirkeln.
+
+   Storleken anges i procent av cirkeln, så loggan skalar med
+   cirkeln utan egna pixelsiffror. 66% i stället för 50% eftersom
+   bilden har mycket luft runt själva monogrammet - annars blir
+   märket nästan osynligt i den stora cirkeln. */
+.hero-logo {
+    width: 66%;
+    height: auto;
+
+    display: block;
+
+    border-radius: 50%;
+
+    /* Tonen i loggan ligger nära cirkelns #e3e0d8, så en tunn
+       mörk ring behövs för att skilja dem åt. */
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.15),
+                0 18px 40px rgba(17, 17, 17, 0.12);
+
+    /* Långsam gungning. Ingen rotation - loggans ordmärke
+       BRACCÌ ska stå rakt. */
+    animation: logoFloat 5s ease-in-out infinite;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    padding: 130px 10%;
+
+    max-width: 900px;
+}
+
+.intro h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    margin-bottom: 35px;
+}
+
+.intro>p:last-child {
+    max-width: 500px;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+    padding: 100px 7%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 55px;
+
+    font-weight: 500;
+}
+
+.section-heading>p {
+    max-width: 300px;
+
+    color: #777;
+
+    line-height: 1.6;
+}
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+
+    padding: 12px;
+
+    transition: 0.4s;
+
+    border: 1px solid transparent;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: #ddd;
+}
+
+.product-image {
+    height: 360px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.product-image span {
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    letter-spacing: 3px;
+
+    transform: rotate(-15deg);
+
+    opacity: 0.8;
+}
+
+.image-one {
+    background: #dedbd4;
+}
+
+.image-two {
+    background: #d6d6d6;
+}
+
+.image-three {
+    background: #c9c7c0;
+}
+
+.image-four {
+    background: #e7e3da;
+}
+
+.product-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 20px 5px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    color: #888;
+
+    font-size: 12px;
+}
+
+.product-info strong {
+    font-size: 14px;
+}
+
+.product-card>button {
+    width: 100%;
+
+    border: none;
+
+    background: #111;
+    color: white;
+
+    padding: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.product-card>button:hover {
+    background: #444;
+}
+
+/* Köpknappen är en länk till betalsidan, inte en knapp */
+.product-card>a.product-link {
+    display: block;
+
+    width: 100%;
+
+    background: #111;
+    color: white;
+
+    padding: 15px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.product-card>a.product-link:hover {
+    background: #444;
+}
+
+.product-card>a.product-link:focus-visible {
+    outline: 2px solid #c9a96a;
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   FEATURE
+========================= */
+
+.feature {
+    padding: 150px 10%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.feature-image {
+    height: 600px;
+
+    background: #ddd9d0;
+
+    display: flex;
+
+    /* Hela ramen ska ligga i mitten, inte bara innehållet */
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    overflow: hidden;
+}
+
+/* Stilarna låg tidigare på <img id="lol">, vilket gjorde att
+   .feature-bracelet (elementet som faktiskt omsluter bilden)
+   saknade all styling. Nu ligger allt på den rätt, så även
+   mobilregeln som sätter storlek och ram fungerar.
+
+   overflow: hidden är det viktiga - utan det klipps inte
+   bilden till cirkeln, så de fyrkantiga hörnen sticker ut
+   genom den runda ramen. logga.png är 800x800, alltså
+   kvadratisk, och fyller därför hela innehållsytan.
+
+   picture-elementet är inline per default, vilket lägger en
+   textrad under bilden. display: block på .feature-bracelet
+   picture tar bort den raden. */
+
+.feature-bracelet {
+
+    width: 290px;
+    height: 290px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 35px solid #222;
+
+    border-radius: 50%;
+
+    /* Knappar bilden till cirkeln så att den passar in i ramen */
+    overflow: hidden;
+
+    transform: rotate(-20deg);
+
+    flex-shrink: 0;
+}
+
+.feature-bracelet picture {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.feature-bracelet img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+
+.feature-content h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 6vw, 80px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    margin-bottom: 35px;
+}
+
+.feature-content>p:not(.section-label) {
+    max-width: 450px;
+
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+.text-link {
+    font-size: 14px;
+
+    border-bottom: 1px solid #111;
+
+    padding-bottom: 5px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: #111;
+
+    color: white;
+
+    padding: 130px 10%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+}
+
+.about h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    margin-bottom: 40px;
+}
+
+.about h2 span {
+    color: #aaa;
+}
+
+.about-content>p:not(.section-label) {
+    max-width: 500px;
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+.about-number {
+    font-family: "Playfair Display", serif;
+
+    font-size: 150px;
+
+    color: #292929;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    padding: 130px 10%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.contact h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+}
+
+.contact-info {
+    min-width: 250px;
+}
+
+.contact-info p {
+    color: #888;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+
+    margin-top: 25px;
+}
+
+.contact-info a {
+    font-size: 16px;
+
+    border-bottom: 1px solid #111;
+}
+
+
+/* =========================
+   FOOTER
+   Se "BRACCÌ FOOTER" nedan för den faktiska footern.
+========================= */
+
+
+/* REVIEWS */
+
+.review-image {
+    width: 90px !important;
+    height: 90px !important;
+    object-fit: cover;
+
+    display: block;
+    margin: 15px 0 20px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.review-image:hover {
+    transform: scale(1.05);
+}
+
+/* Klonade kort (den andra halvan av scrollen) är inte klickbara */
+.reviews-wrapper [aria-hidden="true"] .review-image {
+    cursor: default;
+}
+
+.reviews-wrapper [aria-hidden="true"] .review-image:hover {
+    transform: none;
+}
+
+.image-popup {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    padding: 30px;
+}
+
+.image-popup.active {
+    display: flex;
+}
+
+.image-popup img {
+    max-width: 80%;
+    max-height: 80vh;
+
+    object-fit: contain;
+}
+
+.image-popup button {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 40px;
+
+    cursor: pointer;
+}
+
+.reviews-section {
+    padding: 110px 0 100px;
+    background: #111;
+    overflow: hidden;
+}
+
+.rew {
+    color: white;
+}
+
+.reviews-section .section-top {
+    padding: 0 7%;
+    margin-bottom: 50px;
+}
+
+.reviews-section .section-top h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+/* Omslaget är skärmbred, så masken nedan mjukar kanterna
+   där korten annars kapas skarpt av skärmkanten. */
+.reviews-viewport {
+
+    overflow: hidden;
+
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, .35) 5%,
+        #000 14%,
+        #000 86%,
+        rgba(0, 0, 0, .35) 95%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, .35) 5%,
+        #000 14%,
+        #000 86%,
+        rgba(0, 0, 0, .35) 95%,
+        transparent 100%
+    );
+}
+
+.reviews-wrapper {
+    display: flex;
+    align-items: stretch;
+
+    width: max-content;
+    gap: 20px;
+
+    animation: reviewScroll 36s linear infinite;
+}
+
+/* Pausar scrollen på hover. Utan det rör sig korten under musen
+   och hover-effekten hamnar på fel kort. */
+.reviews-wrapper:hover {
+    animation-play-state: paused;
+}
+
+.review-card {
+    width: 360px;
+    min-height: 250px;
+    padding: 35px;
+    background: #191919;
+    border: 1px solid #292929;
+    flex-shrink: 0;
+    transition: .4s;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    border-color: #c9a96a;
+}
+
+.stars {
+    color: #c9a96a;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.review-card p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.review-card h4 {
+    color: #f5f3ee;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.review-card span {
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+@keyframes reviewScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* Gungningen för loggan i heroens gråa cirkel. Ingen rotation -
+   loggans ordmärke BRACCÌ ska stå rakt. */
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+}
+
+
+/* Mobila regler ligger samlade i slutet av filen,
+   se sektionen "RESPONSIV" längst ner. */
+
+
+/* =====================================================
+   ELEGANT LIGHT BRACELET PAGE
+===================================================== */
+
+.bracelet-page {
+    background: #f7f5f0;
+    color: #171717;
+}
+
+
+/* NAVIGATION */
+
+.bracelet-nav {
+    position: absolute;
+
+    color: #171717;
+
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.bracelet-nav .logo {
+    color: #171717;
+}
+
+.bracelet-nav nav a {
+    color: #555;
+}
+
+.bracelet-nav nav a:hover {
+    color: #b08d4f;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.bracelet-hero-light {
+
+    min-height: 82vh;
+
+    padding: 170px 9% 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 80% 45%,
+            #e8dfcf,
+            #f7f5f0 48%);
+}
+
+
+.bracelet-hero-text {
+    max-width: 800px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.bracelet-hero-text .eyebrow {
+    color: #aa8a56;
+}
+
+
+.bracelet-hero-text h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(65px, 10vw, 145px);
+
+    line-height: .83;
+
+    font-weight: 500;
+
+    letter-spacing: -6px;
+
+    margin-bottom: 35px;
+}
+
+
+.bracelet-hero-text h1 span {
+
+    display: block;
+
+    color: #a88b5d;
+
+    font-style: italic;
+}
+
+
+.bracelet-hero-text>p:last-child {
+
+    color: #777;
+
+    max-width: 430px;
+
+    line-height: 1.8;
+}
+
+
+/* background decoration */
+
+.hero-decoration {
+
+    position: absolute;
+
+    right: -60px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 230px;
+
+    color: rgba(0, 0, 0, .035);
+
+    letter-spacing: -10px;
+
+    pointer-events: none;
+}
+
+/* BETALSÄTT */
+
+.payment-page {
+    background: #f5f3ee;
+    color: #111;
+    min-height: 100vh;
+    padding-top: 90px;
+}
+
+.payment-hero {
+    padding: 130px 10% 120px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.payment-hero .eyebrow {
+    color: #a3834b;
+}
+
+.payment-hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(60px, 9vw, 120px);
+    line-height: .9;
+    font-weight: 500;
+    letter-spacing: -4px;
+    margin-bottom: 40px;
+}
+
+.payment-hero h1 span {
+    color: #9b8764;
+    font-style: italic;
+}
+
+.payment-hero>p:last-child {
+    max-width: 500px;
+    color: #666;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+
+/* CONTENT */
+
+.payment-content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 10% 150px;
+}
+
+.payment-box {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 40px;
+    padding: 70px 0;
+    border-top: 1px solid #d8d3c9;
+}
+
+.payment-number {
+    color: #a3834b;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.payment-box h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.payment-box p {
+    max-width: 650px;
+    color: #666;
+    line-height: 1.9;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+
+/* SWISH */
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: fit-content;
+    padding: 18px 25px;
+    border: 1px solid #d1c8b8;
+    background: #eeece6;
+}
+
+.payment-method strong {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.payment-method span {
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* INSTAGRAM BUTTON */
+
+.payment-page .gold-button {
+    background: #111;
+    color: #fff;
+}
+
+.payment-page .gold-button:hover {
+    background: #a3834b;
+    color: #111;
+}
+
+
+/* MOBIL */
+
+/* =========================
+   BRACCÌ FOOTER
+========================= */
+
+.site-footer {
+    display: block;
+
+    background: #0b0b0b;
+    color: #f5f3ee;
+    padding: 90px 7% 30px;
+}
+
+
+/* HUVUDDEL */
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* LOGGA */
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-brand a {
+    display: inline-block;
+}
+
+/* picture är inline per default. Utan display: block lägger
+   sig inline-elementet på en egen textrad under loggan. */
+.footer-brand picture {
+    display: block;
+    width: 170px;
+}
+
+.footer-brand img {
+    width: 170px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+}
+
+.footer-brand p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 25px;
+    max-width: 260px;
+}
+
+
+/* KOLUMNER */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-column h4 {
+    color: #555;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    position: relative;
+
+    color: #999;
+    font-size: 13px;
+    transition: .3s;
+    width: fit-content;
+}
+
+.footer-column a:hover {
+    color: #c9a96a;
+    transform: translateX(4px);
+}
+
+/* Understrykning som växer in från vänster */
+.footer-column a::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -3px;
+
+    width: 100%;
+    height: 1px;
+
+    background: #c9a96a;
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.footer-column a:hover::after,
+.footer-column a:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* LINJE */
+
+.footer-line {
+    height: 1px;
+    background: #292929;
+    margin: 80px auto 25px;
+    max-width: 1400px;
+}
+
+
+/* BOTTEN */
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+
+    max-width: 1400px;
+    margin: 0 auto;
+
+    color: #555;
+    font-size: 11px;
+}
+
+.footer-bottom p {
+    color: #555;
+}
+
+.footer-bottom p:nth-child(2) {
+    text-align: center;
+}
+
+.footer-bottom a {
+    color: #555;
+    text-align: right;
+    transition: .3s;
+}
+
+.footer-bottom a:hover {
+    color: #c9a96a;
+}
+
+/* =====================================================
+   COLLECTION
+===================================================== */
+
+.collection-light {
+
+    padding: 130px 7% 170px;
+
+    background: #fff;
+}
+
+
+.collection-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 70px;
+}
+
+
+.collection-heading .eyebrow {
+
+    color: #aa8a56;
+}
+
+
+.collection-heading h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: .9;
+
+    font-weight: 500;
+
+    letter-spacing: -4px;
+}
+
+
+.collection-heading h2 span {
+
+    display: block;
+
+    color: #a88b5d;
+
+    font-style: italic;
+}
+
+
+.collection-description {
+
+    max-width: 240px;
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* Endast produktkorten på armband.html */
+.armband-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.armband-products .product-card {
+    width: 100%;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   SIGNATURE SECTION
+===================================================== */
+
+.signature-section {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    min-height: 550px;
+
+    padding: 120px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+
+    align-items: center;
+
+    background: #e9e3d8;
+}
+
+.signature-text {
+    max-width: 550px;
+}
+
+.signature-text h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 7vw, 95px);
+    line-height: .9;
+    font-weight: 500;
+    letter-spacing: -3px;
+    margin-bottom: 35px;
+}
+
+.signature-text h2 span {
+    display: block;
+    color: #9b8764;
+    font-style: italic;
+}
+
+.signature-text > p:last-child {
+    max-width: 450px;
+    color: #777;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+
+/* SLIDESHOW */
+
+.signature-slideshow {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    background: #eeece6;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    transform: scale(1.03);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* PILAR */
+
+.slide-prev,
+.slide-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, .65);
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    z-index: 5;
+
+    transition: .3s;
+}
+
+.slide-prev {
+    left: 20px;
+}
+
+.slide-next {
+    right: 20px;
+}
+
+.slide-prev:hover,
+.slide-next:hover {
+    background: #c9a96a;
+    color: #111;
+}
+
+
+/* DOTS */
+
+.slide-dots {
+    position: absolute;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 8px;
+
+    z-index: 5;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .5);
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.dot.active {
+    background: #c9a96a;
+    transform: scale(1.3);
+}
+
+
+/* Mobila regler ligger samlade i slutet av filen,
+   se sektionen "RESPONSIV" längst ner. */
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+
+
+.signature-number {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #9d8b70;
+}
+
+
+.signature-content {
+
+    max-width: 750px;
+}
+
+
+.signature-content .eyebrow {
+
+    color: #9d8050;
+}
+
+
+.signature-content h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    font-weight: 500;
+
+    line-height: .9;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 35px;
+}
+
+
+.signature-content h2 span {
+
+    display: block;
+
+    color: #8c806e;
+
+    font-style: italic;
+}
+
+
+.signature-content>p:last-child {
+
+    color: #777;
+
+    max-width: 430px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   ANIMATIONER
+   Subtila premiumrörelser. Allt går att stänga av med
+   prefers-reduced-motion, se slutet av filen.
+===================================================== */
+
+@keyframes goldShimmer {
+
+    0% {
+        background-position: 200% 50%;
+    }
+
+    100% {
+        background-position: -200% 50%;
+    }
+}
+
+
+/* ---- SCROLL REVEAL ----
+   Klassen sätts på av JS. Utan JS förblir allt synligt,
+   så innehållet är aldrig gömt om scriptet inte kör.
+   Långsam start och mjukt utgångsläge - en kort, snabb
+   rörelse känns ryckig när den upprepas hela vägen ned. */
+
+.reveal-item {
+    opacity: 0;
+    transform: translateY(22px);
+
+    transition:
+        opacity 1.2s cubic-bezier(.16, 1, .3, 1),
+        transform 1.2s cubic-bezier(.16, 1, .3, 1);
+}
+
+.reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---- GULDGLANS PÅ TEXT ----
+   Bara för element som ÄR texten (ingen egen bakgrund).
+   Färgerna måste anges explicit - currentColor fungerar
+   inte när color sätts till transparent.
+   Bred och mjugg gradient ger en långsam glansvåg
+   istället för en skarp guldstref. */
+
+.logo,
+.text-link {
+
+    background-image: linear-gradient(
+        100deg,
+        #111 0%,
+        #111 28%,
+        #d8bd85 42%,
+        #c9a96a 50%,
+        #d8bd85 58%,
+        #111 72%,
+        #111 100%
+    );
+
+    background-size: 260% 100%;
+    background-repeat: no-repeat;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    transition: background-position 1.4s cubic-bezier(.16, 1, .3, 1);
+}
+
+.logo:hover,
+.text-link:hover {
+    background-position: -130% 0;
+}
+
+
+/* ---- GLANSSTREJPE PÅ KNAPPAR ----
+   Knappar har egen bakgrund, så där används en halvgenom-
+   guldig stråle som sveper över istället för textklippning. */
+
+.main-button,
+.gold-button {
+
+    position: relative;
+    overflow: hidden;
+}
+
+.main-button::after,
+.gold-button::after {
+
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -60%;
+
+    width: 45%;
+    height: 100%;
+
+    background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(201, 169, 106, .28) 45%,
+        rgba(201, 169, 106, .38) 50%,
+        rgba(201, 169, 106, .28) 55%,
+        transparent
+    );
+
+    transform: skewX(-18deg);
+
+    pointer-events: none;
+
+    transition: left 1.5s cubic-bezier(.16, 1, .3, 1);
+}
+
+.main-button:hover::after,
+.gold-button:hover::after {
+    left: 120%;
+}
+
+
+/* ---- LÄNKSUNDERSTRIK SOM växer ---- */
+
+.underline-grow {
+    position: relative;
+}
+
+.underline-grow::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -3px;
+
+    width: 100%;
+    height: 1px;
+
+    background: #c9a96a;
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+
+.underline-grow:hover::after,
+.underline-grow:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* ---- MJUK BILDZOOM ---- */
+
+.product-image img,
+.product-image span,
+.card-frame img {
+    transition: transform 1.6s cubic-bezier(.16, 1, .3, 1);
+}
+
+.product-card:hover .product-image img,
+.product-card:hover .product-image span,
+.card-frame:hover img {
+    transform: scale(1.06);
+}
+
+
+/* ---- MAGNETISK KNAPP ----
+   JS sätter --mx/--my, CSS flyttar knappen mjukt ditåt.
+   Knyts ihop med knappens vanliga hover-lyft, annars
+   skulle den ena transformen skriva över den andra.
+   Samma easing hela vägen - en snabb start och långsam
+   återgång (som tidigare) uppfattas som hackig. */
+
+.magnetic {
+    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0);
+
+    transition: transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+
+.magnetic:hover {
+    transform:
+        translate3d(var(--mx, 0px), calc(var(--my, 0px) - 4px), 0);
+}
+
+
+/* ---- LYFT PÅ KORT ---- */
+
+.hover-lift {
+    transition:
+        transform .8s cubic-bezier(.16, 1, .3, 1),
+        box-shadow .8s cubic-bezier(.16, 1, .3, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .10);
+}
+
+
+/* =====================================================
+   SIDÖVERGÅNG
+   Sidan tonar in när den laddas och tonar ut innan
+   byte till nästa sida sker. JS sätter .is-leaving
+   på <html> strax före navigeringen.
+
+   Intoningen är en CSS-animation, inte opacity: 0.
+   Då kan innehållet aldrig fastna osynligt - utan JS
+   fungerar den ändå, bara utan uttoning.
+   ===================================================== */
+
+@keyframes pageEnter {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+
+    animation: pageEnter .7s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+/* Sätts på <html> av JS strax före navigering */
+.is-leaving body {
+
+    animation: none;
+
+    opacity: 0;
+
+    transition: opacity .3s ease;
+}
+
+
+/* =====================================================
+   RESPONSIV
+   Samlade mobila regler, i ordning från största till
+   minsta skärm. Läggs sist i filen så att de alltid
+   vinner över basreglerna ovan.
+===================================================== */
+
+/* ---- SURFPLATTA OCH MINDRE (900px) ---- */
+
+@media (max-width: 900px) {
+
+    /* Utfällbar meny.
+       Hela regeln ligger vid samma breakpoint som hamburgaren
+       dyker upp. Den låg tidigare i 800px-blocket, vilket gjorde
+       att fönstret 801-900px (surfplatta i porträtt) döljde
+       länkarna utan att hamburgaren öppnade något - .show gjorde
+       då bara naven till ett vanligt flex-item i raden, som
+       tryckte ihop loggan och skjöte länkarna utanför skärmen.
+
+       top: 100% lägger menyn direkt under navbaren oavsett hur
+       hög den är, i stället för ett hårdkodat pixelvärde som
+       riskerar att glida isär när höjden ändras nedan. */
+    .navbar nav {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        background: rgba(246, 245, 242, .98);
+        backdrop-filter: blur(15px);
+
+        box-shadow: 0 12px 20px rgba(0, 0, 0, .08);
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px 6% 20px;
+
+        /* I landskapsläge på mobil är skärmen ofta kortare än
+           navaren plus fem länkar. Utan en max-höjd kapas de
+           sista länkarna av och går inte att nå. dvh följer med
+           när webbläsaren visar/gömmer sin adressrad; vh är
+           fallback för äldre webbläsare. */
+        max-height: calc(100vh - var(--nav-h));
+        max-height: calc(100dvh - var(--nav-h));
+
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .navbar nav.show {
+        display: flex;
+    }
+
+    .navbar nav a {
+        padding: 14px 0;
+
+        font-size: 15px;
+
+        color: #111;
+
+        border-bottom: 1px solid #e2dfd8;
+    }
+
+    /* Sista länken får ingen linje - annars ser menyn ut att
+       vara avklippt. */
+    .navbar nav a:last-child {
+        border-bottom: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    /* Hero - låt sektionen följa sitt innehåll.
+       min-height: 100vh tvingade heroen till en hel skärmhöjd,
+       men innehållet är bara ca 350-370px högt på telefon och
+       surfplatta. På en iPad i porträtt är skärmen 1180px, så
+       nästan 600px av heroen blev tomrum innan nästa sektion
+       började, vilket läst som ett fel i layouten.
+
+       Desktop (över 900px) behåller 100vh - där är fönstret
+       bredare, rubriken större och innehållet fyller mer av
+       höjden, så en heldriven hero är avsiktligt där.
+
+       vh räcker dessutom inte som mått på mobil: det räknar
+       in webbläsarens adressrad, så "en skärm" är högre än det
+       som faktiskt syns. */
+    .hero {
+        min-height: auto;
+
+        padding: calc(var(--nav-h) + 25px) 7% 50px;
+    }
+
+    /* Cirkeln med loggan ligger BAKOM texten. .hero-content har
+       position: relative + z-index: 2 (se basreglerna), så rubrik
+       och brödtext ligger ovanpå.
+
+       Skivan är stor - 400px - och loggan fyller 66% av den. Det
+       är det som gör att märket inte smälter ihop med rubriken:
+       en liten mörk monogram bakom "Wear your" uppfattas som en
+       trasig bokstav, en markant monogram uppfattas som ett
+       eget objekt.
+
+       left: 74% trycker skivan mycket åt höger (50% vore mitt
+       på skärmen). Procenttalet bestäms av loggan, inte av
+       skivan: märket är 66% av skivan och måste rymmas mellan
+       skivans mittpunkt och skärmkanten. Hur långt åt höger det
+       går att komma är alltså (skärmbredd - 0.66 x skivan) / 2,
+       uttryckt i procent. Därför krymper skivan i de smalare
+       reglerorna nedan - annars skulle märkets högra kant sticka
+       ut genom skärmen.
+
+       opacity 0.35 gör att loggan ligger som ett ljust
+       bakgrundslager - den ska anas snarare än konkurrera med
+       texten.
+
+       rotate(15deg) vänder monogrammet medsols. Den grå skivan är
+       rund så märks rotationen bara i loggan, och eftersom rotate
+       står efter translateX snurrar den kring cirkelns egen
+       mittpunkt.
+
+       Skivan klipps av heroens overflow: hidden där den går utanför
+       skärmen. Det är avsiktligt - den ska kännas som ett
+       bakgrundslager, inte som en dekoration med kant. Loggan
+       ligger däremot alltid innanför kanten.
+
+       Storleken är 400px och inte 440px eftersom top: 14% plus
+       440px nådde 28px förbi heroens bottenkant på tablet
+       (768px), där heroen bara är 479px hög. */
+    .hero-circle {
+        position: absolute;
+
+        left: 74%;
+        top: 14%;
+
+        transform: translateX(-50%) rotate(15deg);
+
+        width: 400px;
+        height: 400px;
+
+        opacity: 0.35;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .feature-image {
+        height: 450px;
+    }
+
+    .contact {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 60px;
+    }
+
+
+    /* Kolumnantal - flyttat hit från 800px.
+       De här layouterna är byggda för en bred desktop och blev
+       för trånga redan vid 900px. 801-900px är just
+       surfplatta i porträtt, som är bred nog för att ärva
+       desktop-layouten men för smal för att den ska funka. */
+
+    /* Armband: fyra kort bredvid varandra ger ~168px per kort
+       på en 850px-surfplatta, där kortet har egen padding och
+       en bild som ska synas. Två kort rymmer 270px vardera,
+       vilket är vad kortets max-width redan sätter. */
+    .armband-products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Signatursektionen: texten fick ~260px medan rubriken
+       ligger på 7vw (~60px). "remembered." brytes då över
+       flera rader och texten blir en smal remsa bredvid
+       en stor bild. Stapla hellre. */
+    .signature-section {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+}
+
+
+/* ---- MOBIL (800px) ---- */
+
+@media (max-width: 800px) {
+
+    /* Om oss-sidan */
+    .about-values {
+        padding: 70px 7% 80px;
+    }
+
+    .about-values .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .values-grid {
+        gap: 20px;
+    }
+
+    .value-card {
+        padding: 30px 26px;
+    }
+
+    .about-story {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+
+        padding: 80px 7%;
+    }
+
+    .about-story-number {
+        font-size: 90px;
+    }
+
+    .about-cta {
+        padding: 55px 7% 100px;
+    }
+
+
+    /* Navigation - bara höjden. Utfällningsmenyn ligger i
+       900px-blocket, dit hamburgaren också flyttades, så att
+       de två inte kan glida isär.
+
+       --nav-h sätts på :root, inte på .navbar, eftersom även
+       sektionerna längre ner läser samma tal för sin
+       topppadding. */
+    :root {
+        --nav-h: 75px;
+    }
+
+    .navbar {
+        padding: 0 6%;
+    }
+
+
+    /* Armband-sidan
+       Kolumnantalet ligger i 900px-blocket, så att det även
+       gäller surfplatta. Här justeras bara det som är unikt
+       för mobil. */
+    .armband-products {
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .armband-products .product-card {
+        max-width: 100%;
+    }
+
+    .armband-products .product-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .armband-products .product-card h3 {
+        font-size: 15px;
+    }
+
+    .armband-products .product-card p {
+        font-size: 12px;
+    }
+
+
+    /* Betalsidan
+       Navbaren är position: fixed och 75px hög på mobil,
+       så topppaddingen MÅSTE vara större än 75px annars
+       hamnar rubriken under navbaren. */
+    .payment-page {
+        padding-top: 100px;
+    }
+
+    .payment-hero {
+        padding: 90px 7% 80px;
+    }
+
+    .payment-hero h1 {
+        font-size: 60px;
+        letter-spacing: -2px;
+    }
+
+    .payment-content {
+        padding: 0 7% 100px;
+    }
+
+    .payment-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 50px 0;
+    }
+
+    .payment-box h2 {
+        font-size: 38px;
+    }
+
+    .payment-method {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+    }
+
+
+    /* Signatursidan
+       Kolumnantalet ligger i 900px-blocket. */
+    .signature-section {
+        padding: 90px 7%;
+    }
+
+    .signature-text h2 {
+        font-size: 55px;
+    }
+
+    .signature-slideshow {
+        height: 400px;
+    }
+
+    .slide-prev,
+    .slide-next {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* Kollektion och hero ovanför
+
+       Navbaren är position: fixed och 75px hög på mobil, så
+       padding-top måste vara större än 75px annars hamnar
+       "BRACCÌ — COLLECTION 2026" under navbaren. 140px gav
+       ändå 149px mellan navbarnens botten och etiketten, vilket
+       lästs som att heroen börjar för långt ner. 100px ger
+       109px - fortfarande 34px mer än navbarnen kräver.
+
+       padding-bottom 100 -> 70px av samma skäl.
+
+       min-height: 82vh sänks till 70vh. Det var den som höll
+       heroen på nästan hela skärmen: mätning vid 390px gav en
+       sektion på 692px medan innehållet plus padding bara
+       behövde 455px, alltså 237px centreringsmarginal. 70vh
+       ger 591px och lämnar fortfarande ~136px luft, så det ser
+       inte platt ut. Desktop (över 800px) behåller 82vh. */
+    .bracelet-hero-light {
+        min-height: 70vh;
+
+        padding: 100px 7% 70px;
+    }
+
+    .bracelet-hero-text h1 {
+        font-size: 70px;
+        letter-spacing: -3px;
+    }
+
+    .hero-decoration {
+        font-size: 120px;
+        right: -40px;
+        top: 70%;
+    }
+
+    .collection-light {
+        padding: 100px 7% 110px;
+    }
+
+    .collection-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .collection-heading h2 {
+        font-size: 55px;
+    }
+
+    .bracelet-cards {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .card-frame {
+        height: 450px;
+    }
+
+    .bracelet {
+        width: 230px;
+        height: 230px;
+        border-width: 35px;
+    }
+
+
+    /* Footer - loggan centreras och länkarna läggs i en
+       centrerad rad som bryts vid behov */
+    .site-footer {
+        padding: 65px 6% 25px;
+    }
+
+    .footer-main {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-brand {
+        max-width: none;
+        margin-bottom: 50px;
+    }
+
+    .footer-brand img {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    .footer-brand p {
+        margin: 20px auto 0;
+        max-width: 280px;
+    }
+
+    .footer-column {
+        display: inline-flex;
+        vertical-align: top;
+        align-items: center;
+
+        margin: 0 24px 34px;
+    }
+
+    .footer-column h4 {
+        white-space: nowrap;
+    }
+
+    .footer-line {
+        margin: 0 auto 25px;
+    }
+
+    .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .footer-bottom p:nth-child(2),
+    .footer-bottom a {
+        text-align: center;
+    }
+}
+
+
+/* ---- MINDRE MOBIL (700px) ---- */
+
+@media (max-width: 700px) {
+
+    /* Intro - håll botten och topp lågt mot heroen ovan, så att
+       de två inte möts i ett stort hål. Heroens egna regler ligger
+       i 800px-blocket, dit även min-height flyttades. */
+    .intro {
+        padding: 60px 7% 70px;
+    }
+
+    .products-section {
+        padding: 70px 7%;
+    }
+
+    /* Navbaren är position: fixed, 75px hög på mobil. Topppaddingen
+       måste vara större än 75px annars hamnar "GET IN TOUCH" och
+       liknande rubriker under navbaren och blir osynliga. */
+    .about-page,
+    .contact-page {
+        padding: 100px 7% 70px;
+    }
+
+    /* min-height: 80vh från basregeln tvingar sektionen till 80%
+       av skärmhöjden. Innehållet på mobil är bara ~360px, så det
+       blev 313px tomrum mellan kontaktuppgifterna och FAQ-sektionen
+       - och eftersom båda sektionerna har samma bakgrundsfärg
+       lästes det som ett fel. min-height: auto låter sektionen
+       växa med sitt innehåll istället.
+
+       Bottom paddingen sänks också 70 -> 50px av samma skäl. */
+    .contact-page {
+        min-height: auto;
+
+        padding-bottom: 50px;
+    }
+
+    /* Samma bottom padding som kontaktsidan, så de två sidorna blir
+       lika täta. min-height: auto sätts redan i .about-page:s
+       basregel och behövs inte upprepas här. */
+    .about-page {
+        padding-bottom: 50px;
+    }
+
+    .contact-page h1 {
+        font-size: 50px;
+
+        margin-bottom: 45px;
+    }
+
+    /* Om oss - ingress och värden */
+    .about-page .about-lead {
+        font-size: 17px;
+    }
+
+    /* Bakgrundsordet ska ligga kvar bakom texten,
+       inte sticka ut under den på mobil. */
+    .about-page-decor {
+        top: 55%;
+
+        right: -50px;
+
+        font-size: 78px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card h3 {
+        font-size: 23px;
+    }
+
+    /* Samma rad på mobil: rad istället för kolumn, och raden får
+       inte brytas (nowrap annars staplar flexraden upp sig när
+       den inte ryms).
+
+       justify-content: space-evenly sprider ut blocken lika
+       mycket mellan sig som mot kanterna. space-between (som
+       det var innan) tryckte istället ut första och sista
+       blocken till kanterna, vilket gav ~34px mellan blocken på
+       en 390px-telefon. space-evenly halverar det och har en
+       bonus: gapet är 0 eftersom utrymmet redan fördelas, så
+       raden kan aldrig bli för bred och trycka ihop.
+
+       align-items: flex-start håller etiketterna
+       Email/Instagram/Öppettider i samma höjd, trots att
+       Öppettider har två rader. */
+    .contact-box {
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        justify-content: space-evenly;
+        gap: 0;
+
+        align-items: flex-start;
+
+        text-align: center;
+    }
+
+    /* Lite mindre text så att alla tre blocken ryms på en 320px
+       bred telefon. */
+    .contact-box h2 {
+        font-size: 15px;
+    }
+
+    .contact-box p,
+    .contact-box a {
+        font-size: 13px;
+    }
+
+    /* FAQ: en kolumn, och rubriken ska inte fastna
+       när man scrollar igenom frågorna. */
+    .contact-faq {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 70px 7% 90px;
+    }
+
+    .faq-heading {
+        position: static;
+    }
+
+    .faq-item summary {
+        font-size: 19px;
+    }
+}
+
+
+/* ---- TELEFON (600px) ---- */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    /* Mindre skiva på mobil, så att märket fortfarande ryms
+       innanför skärmkanten trots att skivan flyttats långt åt
+       höger. Loggan skalar i procent av skivan, så märket blir
+       fortfarande markant nog att inte smälta ihop med rubriken.
+
+       left: 68% med 360px skiva skulle ge loggans högra kant
+       1px utanför skärmen på en 320px-telefon. 300px ger 25px
+       marginal vid 390px och 16px vid 360px.
+
+       top: 26% flyttar skivan nedåt. Ytterligare går inte:
+       bottenkanten får inte passera heroens kant, eftersom
+       nästa sektion har samma bakgrundsfärg och en avklippt
+       skiva då syns som ett hårt streck. 26% av 471px + 300px
+       = 422px, alltså 49px kvar. */
+    .hero-circle {
+        width: 300px;
+        height: 300px;
+
+        top: 26%;
+
+        left: 68%;
+    }
+
+    .intro h2,
+    .page-title {
+        font-size: 45px;
+    }
+
+    .intro,
+    .products-section,
+    .feature,
+    .about,
+    .contact {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .section-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 45px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 400px;
+    }
+
+    .feature-image {
+        height: 350px;
+    }
+
+    .feature-bracelet {
+        width: 220px;
+        height: 220px;
+
+        border-width: 25px;
+    }
+
+    .about {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 50px;
+    }
+
+    .about-number {
+        font-size: 80px;
+    }
+}
+
+
+/* ---- SMALA TELEFONER (480px) ---- */
+
+@media (max-width: 480px) {
+
+    /* Smalaste telefonerna: raden måste krympa ännu en grad för att
+       alla tre blocken ska få plats. mätning på 320px gav ca 10px
+       för mycket bredd med 13px/15px och 10px gap. */
+    .contact-box {
+        gap: 6px;
+    }
+
+    .contact-box h2 {
+        font-size: 14px;
+    }
+
+    .contact-box p,
+    .contact-box a {
+        font-size: 12px;
+    }
+
+    /* Ännu mindre skiva på de allra smalaste skärmarna. Här är
+       utrymmet som minst: 320px minus loggans 66% av skivan ger
+       ~66px spel från mittpunkten till kanten, och left: 64%
+       äter ~43px av det. */
+    .hero-circle {
+        width: 260px;
+        height: 260px;
+
+        left: 64%;
+    }
+
+    .armband-products {
+        grid-template-columns: 1fr;
+        padding: 0 25px;
+    }
+
+    .armband-products .product-card {
+        max-width: 300px;
+    }
+
+    .site-footer {
+        padding: 55px 5% 25px;
+    }
+
+    .footer-column {
+        margin: 0 14px 30px;
+    }
+
+    .footer-column h4 {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .footer-column a {
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================================
+   RESPEKTERA REDUCERAD RÖRELSE
+   Måste ligga sist och använda !important för att
+   vinna över alla animationer ovanför.
+
+   Sidan lägger till class="force-motion" på <html> när
+   adressen innehåller ?motion=1 - då hoppas allt
+   blockeras över, så animationerna kan granskas även
+   på en dator där Windows har animationer avstängda.
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html:not(.force-motion) *,
+    html:not(.force-motion) *::before,
+    html:not(.force-motion) *::after {
+
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+        transition-delay: 0ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+    /* Dekorativt dyvande stoppas helt */
+    html:not(.force-motion) .hero-logo {
+
+        animation: none !important;
+    }
+
+    /* Recensionerna rör sig fortfarande, men mycket långsammare
+       så att det inte skapar obehag. Skrivs med longhands för att
+       inte nollställa animation-play-state (hover-pausen
+       måste fungera). */
+    html:not(.force-motion) .reviews-wrapper {
+
+        animation-name: reviewScroll !important;
+        animation-duration: 120s !important;
+        animation-timing-function: linear !important;
+        animation-iteration-count: infinite !important;
+    }
+
+    /* Ingen lyft eller glans på hover */
+    html:not(.force-motion) .review-card:hover,
+    html:not(.force-motion) .product-card:hover .product-image img,
+    html:not(.force-motion) .product-card:hover .product-image span,
+    html:not(.force-motion) .hover-lift:hover {
+
+        transform: none !important;
+    }
+
+    /* Scroll-reveal ska inte dölja något - visa allt direkt */
+    html:not(.force-motion) .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+

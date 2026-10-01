@@ -1,0 +1,55 @@
+# Netlify: cache-inställningar och säkerhetshuvud
+#
+# Filen ska ligga i samma mapp som index.html. Netlify läser den
+# automatiskt - ingen byggprocess behövs, bara dra in mappen på
+# app.netlify.com/drop.
+#
+# Används _headers istället för netlify.toml eftersom den fungerar
+# även vid drag-och-släpp. TOML-filen läses bara vid deploy från
+# git eller CLI.
+
+
+# ---------------------------------------------------------
+# SÄKERHET
+# ---------------------------------------------------------
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'none'; base-uri 'self'; frame-ancestors 'self'
+
+
+# ---------------------------------------------------------
+# CACHING
+#
+# HTML, CSS och JS får inte cachas hårt. Det är det vanligaste
+# problemet med statiska sajter: man uppdaterar en fil, men
+# besökare som redan varit på sidan ser fortfarande den gamla
+# versionen. max-age=0 + must-revalidate tvingar webbläsaren att
+# fråga servern varje gång.
+#
+# max-age=0 nollställer tiden, must-revalidate tillåter att
+# svaret mellanlagras men kräver en ny kontroll.
+# ---------------------------------------------------------
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/style.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/script.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+
+# ---------------------------------------------------------
+# BILDER
+#
+# Filnamnen saknar versionshash (logga.webp, inte logga.abc123.webp)
+# så bilderna får inte heller cachas i åratal. Loggan väger ändå
+# bara 14,5 KB, så en ny kontroll varje gång kostar inget.
+# ---------------------------------------------------------
+
+/img/*
+  Cache-Control: public, max-age=0, must-revalidate

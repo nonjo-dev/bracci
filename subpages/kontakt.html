@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Braccì UF | Kontakt</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../img/logga.png">
+
+    <!-- Samma sak som saknades på om oss-sidan: utan dessa laddas
+         varken Playfair Display eller DM Sans, och alla rubriker
+         faller tillbaka på Times New Roman. FAQ:en använder
+         Playfair Display, så fonter behövs här också. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+    <a href="../index.html" class="logo">
+            <div class="bla">
+                <div>Bracc<span>ì</span></div>
+                <div> UF</div>
+            </div>
+
+        </a>
+        <nav id="mainnav">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="armband.html">
+                Armband
+            </a>
+
+            <a href="omoss.html">
+                Om oss
+            </a>
+
+            <a href="kontakt.html">
+                Kontakt
+            </a>
+
+            <a href="betalsatt.html">
+                Betalsätt
+            </a>
+
+        </nav>
+
+        <button class="menu-button" type="button" onclick="toggleMenu()"
+            aria-label="Öppna meny" aria-expanded="false" aria-controls="mainnav">
+            <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+
+    </header>
+
+
+    <!-- CONTACT -->
+    <main>
+
+        <section class="contact-page">
+
+            <p class="section-label">
+                GET IN TOUCH
+            </p>
+
+            <h1>
+                Kontakta
+                <span>Braccì.</span>
+            </h1>
+
+
+            <div class="contact-box">
+
+                <div>
+
+                    <h2>
+                        Email
+                    </h2>
+
+                    <a href="mailto:hello@bracci.se">
+                        hello@bracci.se
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Instagram
+                    </h2>
+
+                    <a href="#">
+                        @bracci
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Öppettider
+                    </h2>
+
+                    <p>
+                        Måndag – Fredag<br>
+                        09:00 – 16:00
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VANLIGA FRÅGOR -->
+        <section class="contact-faq">
+
+            <div class="faq-heading">
+
+                <p class="section-label">
+                    VANLIGA FRÅGOR
+                </p>
+
+                <h2>
+                    Det du
+                    <span>undrar.</span>
+                </h2>
+
+                <p>
+                    Hittar du inte svaret? Skriv ett meddelande
+                    på Instagram eller mejla oss, så hjälper vi dig.
+                </p>
+
+            </div>
+
+            <!-- details/summary fungerar utan JS och är
+                 tangentbordstyrda av sig själva -->
+            <div class="faq-list">
+
+                <details class="faq-item">
+
+                    <summary>Hur beställer jag ett armband?</summary>
+
+                    <div class="faq-answer">
+                        <p>
+                            Alla beställningar görs via vårt Instagram-konto.
+                            Gå in på vår profil och skicka ett meddelande
+                            med vilket armband du vill ha, så bekräftar vi
+                            ordern och skickar betalningsinformationen.
+                        </p>
+                    </div>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>Vad kostar armbanden?</summary>
+
+                    <div class="faq-answer">
+                        <p>
+                            Priset varierar beroende på modell, från
+                            179 kr för Essential till 249 kr för Midnight.
+                            Du hittar alla priser under Armband.
+                        </p>
+                    </div>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>Hur betalar jag?</summary>
+
+                    <div class="faq-answer">
+                        <p>
+                            Betalning sker via Swish, vilket är vårt enda
+                            betalningsalternativ just nu. När din beställning
+                            är bekräftad får du information om hur
+                            betalningen genomförs.
+                        </p>
+                    </div>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <!-- TODO: fyll i er verkliga leveranstid.
+                         Frågan får inte ligga kvar ofylld när ni deployar. -->
+                    <summary>Hur lång tid tar det att få mitt armband?</summary>
+
+                    <div class="faq-answer">
+                        <p>
+                            Kontakta oss via Instagram så berättar vi
+                            den aktuella leveranstiden.
+                        </p>
+                    </div>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <!-- TODO: fyll i er returrätt. -->
+                    <summary>Kan jag returnera eller byta ett armband?</summary>
+
+                    <div class="faq-answer">
+                        <p>
+                            Hör av dig till oss först så går vi igenom
+                            ditt ärende.
+                        </p>
+                    </div>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>När är ni öppna?</summary>
+
+                    <div class="faq-answer">
+                        <p>
+                            Vi svarar vanligtvis måndag till fredag
+                            mellan 09:00 och 16:00. Skicka gärna ett
+                            meddelande när som helst - vi återkommer
+                            så fort vi kan.
+                        </p>
+                    </div>
+
+                </details>
+
+            </div>
+
+        </section>
+
+    </main>
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- LOGO -->
+        <div class="footer-brand">
+            <a href="../index.html">
+                <picture>
+                    <source srcset="../img/logga.webp" type="image/webp">
+                    <img src="../img/logga.png" alt="Braccì logo" width="800" height="800">
+                </picture>
+            </a>
+
+            <p>
+                Armband med personlig stil.
+                Enkla detaljer som gör skillnad.
+            </p>
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <div class="footer-column">
+            <h4>SHOP</h4>
+
+            <a href="../index.html">Home</a>
+            <a href="../subpages/armband.html">Armband</a>
+            <a href="../subpages/betalsatt.html">Betalsätt</a>
+        </div>
+
+
+        <!-- INFORMATION -->
+        <div class="footer-column">
+            <h4>INFORMATION</h4>
+
+            <a href="../subpages/omoss.html">Om oss</a>
+            <a href="../subpages/kontakt.html">Kontakt</a>
+        </div>
+
+
+        <!-- SOCIAL -->
+        <div class="footer-column">
+            <h4>FÖLJ OSS</h4>
+
+            <a href="https://www.instagram.com/DITT_INSTAGRAM_NAMN/" target="_blank">
+                Instagram ↗
+            </a>
+
+            <a href="#">TikTok ↗</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-line"></div>
+
+
+    <div class="footer-bottom">
+        <p>© 2026 Braccì UF</p>
+
+        <p>
+            Made with intention.
+        </p>
+
+        <a href="../subpages/betalsatt.html">
+            Betalning via Swish
+        </a>
+    </div>
+
+</footer>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

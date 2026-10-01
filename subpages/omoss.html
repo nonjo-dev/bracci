@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Braccì UF | Om oss</title>
+
+    <meta name="description"
+        content="Braccì är ett ungdomsföretag som skapar armband med personlig stil. Läs mer om vår idé, design och vad som gör Braccì speciellt.">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../img/logga.png">
+
+    <!-- Google Font
+         Saknades tidigare på den här sidan, så Playfair Display och DM Sans
+         aldrig laddades och rubrikerna föll tillbaka på Times New Roman.
+         Alla sidans klasser (.about-page, .about-story, .about-values,
+         .about-cta) bor i style.css - här ligger bara HTML och fonten. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            <div class="bla">
+                <div>Bracc<span>ì</span></div>
+                <div> UF</div>
+            </div>
+        </a>
+
+        <nav id="mainnav">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="armband.html">
+                Armband
+            </a>
+
+            <a href="omoss.html">
+                Om oss
+            </a>
+
+            <a href="kontakt.html">
+                Kontakt
+            </a>
+
+            <a href="betalsatt.html">
+                Betalsätt
+            </a>
+
+        </nav>
+
+        <button class="menu-button" type="button" onclick="toggleMenu()"
+            aria-label="Öppna meny" aria-expanded="false" aria-controls="mainnav">
+            <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+
+    </header>
+
+
+    <!-- ABOUT -->
+    <main>
+
+        <!-- HERO -->
+        <section class="about-page">
+
+            <!-- Bakgrundsord, samma typ av dekoration som på armband.html.
+                 Sitter bakom texten: .about-page får position/overflow
+                 och .about-page-decor har z-index 0 medan innehållet
+                 ligger på z-index 1. -->
+            <div class="hero-decoration about-page-decor" aria-hidden="true">
+                BRACCÌ UF
+            </div>
+
+            <p class="section-label">
+                ABOUT BRACCÌ
+            </p>
+
+            <h1>
+                Mer än
+                <span>ett armband.</span>
+            </h1>
+
+            <p class="about-lead">
+                Braccì är ett ungdomsföretag som drivs av ett gäng grabbar
+                med ett gemensamt intresse för stil och accessoarer.
+            </p>
+
+        </section>
+
+
+        <!-- BERÄTTELSE -->
+        <section class="about-story">
+
+            <div class="about-story-text">
+
+                <p class="section-label">
+                    VÅR IDÉ
+                </p>
+
+                <h2>
+                    Mer än bara
+                    <span>en accessoar.</span>
+                </h2>
+
+                <p>
+                    Vi startade Braccì med idén att ett armband kan vara
+                    mer än bara en accessoar. Det kan representera
+                    ens personlighet, stil och individualitet.
+                </p>
+
+                <p>
+                    Vårt mål är att kombinera enkel design med
+                    detaljer som gör våra armband speciella.
+                </p>
+
+            </div>
+
+            <div class="about-story-number">
+                01
+            </div>
+
+        </section>
+
+
+        <!-- VÄRDEN -->
+        <section class="about-values">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        VÅRT SYN
+                    </p>
+
+                    <h2>
+                        BRACCÌ handlar om stil, gemenskap
+                        <span>och att våga ha sin egen look.</span>
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="values-grid">
+
+                <article class="value-card">
+
+                    <span class="value-index">01</span>
+
+                    <h3>Enkel design</h3>
+
+                    <p>
+                        Något enkelt men samtidigt snyggt som passar
+                        till olika outfits och personligheter.
+                    </p>
+
+                </article>
+
+
+                <article class="value-card">
+
+                    <span class="value-index">02</span>
+
+                    <h3>Detaljer som gör skillnad</h3>
+
+                    <p>
+                        Enkla detaljer som gör skillnad. Genomtänkta former
+                        och en känsla som håller.
+                    </p>
+
+                </article>
+
+
+                <article class="value-card">
+
+                    <span class="value-index">03</span>
+
+                    <h3>Personlig stil</h3>
+
+                    <p>
+                        Ett armband ska kännas som ditt, oavsett om du
+                        bär det varje dag eller vid ett speciellt tillfälle.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVSLUTNING -->
+        <section class="about-cta">
+
+            <!-- div och inte p: regeln .about-cta>p är avsedd för
+                 brödtexten nedan. Ett p här skulle också träffa den. -->
+            <div class="section-label">
+                NÄSTA STEG
+            </div>
+
+            <h2>
+                Hitta din
+                <span>nya favorit.</span>
+            </h2>
+
+            <p>
+                Utforska kollektionen och hitta det armband
+                som känns som ditt.
+            </p>
+
+            <a href="armband.html" class="main-button magnetic">
+                Se kollektionen
+                <span>→</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <!-- LOGO -->
+            <div class="footer-brand">
+                <a href="../index.html">
+                    <picture>
+                        <source srcset="../img/logga.webp" type="image/webp">
+                        <img src="../img/logga.png" alt="Braccì logo" width="800" height="800">
+                    </picture>
+                </a>
+
+                <p>
+                    Armband med personlig stil.
+                    Enkla detaljer som gör skillnad.
+                </p>
+            </div>
+
+
+            <!-- NAVIGATION -->
+            <div class="footer-column">
+                <h4>SHOP</h4>
+
+                <a href="../index.html">Home</a>
+                <a href="../subpages/armband.html">Armband</a>
+                <a href="../subpages/betalsatt.html">Betalsätt</a>
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="footer-column">
+                <h4>INFORMATION</h4>
+
+                <a href="omoss.html">Om oss</a>
+                <a href="../subpages/kontakt.html">Kontakt</a>
+            </div>
+
+
+            <!-- SOCIAL -->
+            <div class="footer-column">
+                <h4>FÖLJ OSS</h4>
+
+                <a href="https://www.instagram.com/DITT_INSTAGRAM_NAMN/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Instagram ↗
+                </a>
+
+                <a href="#">TikTok ↗</a>
+            </div>
+
+        </div>
+
+
+        <div class="footer-line"></div>
+
+
+        <div class="footer-bottom">
+            <p>© 2026 Braccì UF</p>
+
+            <p>
+                Made with intention.
+            </p>
+
+            <a href="../subpages/betalsatt.html">
+                Betalning via Swish
+            </a>
+        </div>
+
+    </footer>
+
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

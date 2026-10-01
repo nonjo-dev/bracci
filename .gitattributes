@@ -1,0 +1,12 @@
+* text=auto
+
+# HTML, CSS, JS och bildfiler ska alltid använda LF.
+# Radbrytningar i HTML- och CSS-filer är semantiska - CRLF kan
+# orsaka en extra blank rad i en inline <style>-block och i
+# vissa fall bryta en selector över två rader.
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.webp binary
+*.avif binary
+*.png  binary

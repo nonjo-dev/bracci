@@ -1,0 +1,27 @@
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+
+# Redigerare
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Loggar
+*.log
+npm-debug.log*
+
+# Filer som inte ska publiceras
+# logga-original.png är en backup av loggan - 1,7 MB onödig vikt.
+# Använd .gitignore-mönstret nedan om du lägger tillbaka filen.
+img/logga-original*.png
+
+# Miljövariabler (om ni senare lägger till API-nycklar)
+.env
+.env.local
