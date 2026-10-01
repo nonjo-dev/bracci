@@ -1,15 +1,17 @@
 # Braccì UF
 
-Statisk webbplats för Braccì UF. Fem sidor, ingen backend, inget
-byggsteg.
+Statisk webbplats publicerad med GitHub Pages. Fem sidor, ingen
+backend, inget byggsteg.
 
-| Sida | Fil |
-|---|---|
-| Start | `index.html` |
-| Armband | `subpages/armband.html` |
-| Om oss | `subpages/omoss.html` |
-| Kontakt | `subpages/kontakt.html` |
-| Betalsätt | `subpages/betalsatt.html` |
+Adress: `https://DITT-NAMN.github.io/bracci/`
+
+| Sida | Fil | Sökväg på sajten |
+|---|---|---|
+| Start | `index.html` | `/` |
+| Armband | `subpages/armband.html` | `/subpages/armband.html` |
+| Om oss | `subpages/omoss.html` | `/subpages/omoss.html` |
+| Kontakt | `subpages/kontakt.html` | `/subpages/kontakt.html` |
+| Betalsätt | `subpages/betalsatt.html` | `/subpages/betalsatt.html` |
 
 ## Struktur
 
@@ -19,7 +21,7 @@ style.css         all styling, gemensam för alla sidor
 script.js         meny, scroll-animationer, slideshow, bildvisning
 img/              logga (webp + png), armbandsbilder
 subpages/         fyra undersidor
-_headers          cache- och säkerhetshuvud för Netlify
+.nojekyll         hindrar Jekyll från att bearbeta filerna
 ```
 
 Alla sidor delar samma `style.css` och `script.js`. Klassen på
@@ -29,8 +31,8 @@ på betalsättssidan.
 
 ## Arbetsflöde
 
-Redigera filerna, committa, pusha. Sajten uppdateras automatiskt
-inom någon sekund.
+Redigera filerna, committa, pusha. GitHub Pages bygger om sajten
+inom en minut eller två.
 
 ```bash
 git add .
@@ -40,22 +42,25 @@ git push
 
 ## Publicering
 
-Repot är kopplat till Netlify. Varje push till `main` bygger och
-publicerar sajten automatiskt. Deployinställningar:
+Sajten publiceras från branchen `main`, direkt från repots rot.
+Ingen byggprocess, ingen Jekyll.
 
-- Publish directory: `.`
-- Build command: lämnas tomt (ingen byggprocess)
-
-`_headers` läses automatiskt av Netlify. Den innehåller
-cache-inställningar och Content-Security-Policy.
+Aktivera i GitHub: **Settings → Pages → Source: Deploy from a
+branch → Branch: main / (root)**.
 
 ## Anmärkningar
 
-- `img/logga.png` (635 KB) ligger kvar som fallback för
-  webbläsare utan webp-stöd. `img/logga.webp` (14,5 KB) används i
-  praktiken av alla moderna webbläsare via `<picture>`.
+- `img/logga.png` (635 KB) ligger kvar som fallback för webbläsare
+  utan webp-stöd. `img/logga.webp` (14,5 KB) används i praktiken
+  av alla moderna webbläsare via `<picture>`.
 - Loggan har ingen alfa-kanal; bakgrunden #f5f4f0 är inbakad i
   bilden. Det fungerar på ljust underlag men inte på den mörka
   footern, där en genomskinlig logga skulle behövas.
 - Beställningar görs via Instagram. Sök och ersätt
   `DITT_INSTAGRAM_NAMN` på undersidorna.
+- GitHub Pages styr cache och saknar HTTP-huvud. Filerna får
+  Netlifys standardcaching, som i praktiken innebär att en
+  besökare kan behöva hard refresh (Ctrl+Shift+R) efter en
+  uppdatering. Det är den främsta skillnaden mot Netlify.
+- `img/logga-original.png` är en 1,7 MB backup som inte ingår i
+  repot (se `.gitignore`).
