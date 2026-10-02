@@ -3261,35 +3261,30 @@ body {
         font-size: 23px;
     }
 
-    /* Samma rad på mobil: rad istället för kolumn, och raden får
-       inte brytas (nowrap annars staplar flexraden upp sig när
-       den inte ryms).
+    /* Stapla upp kontaktuppgifterna i en kolumn på mobil.
 
-       justify-content: space-evenly sprider ut blocken lika
-       mycket mellan sig som mot kanterna. space-between (som
-       det var innan) tryckte istället ut första och sista
-       blocken till kanterna, vilket gav ~34px mellan blocken på
-       en 390px-telefon. space-evenly halverar det och har en
-       bonus: gapet är 0 eftersom utrymmet redan fördelas, så
-       raden kan aldrig bli för bred och trycka ihop.
+       Tidigare stod alla tre i en rad (flex-direction: row med
+       nowrap), men det höll inte: e-postadressen
+       bracciufsupport@gmail.com är 26 tecken och fick bara en
+       tredjedel av skärmbredden. Den bröts mitt i och raden
+       blev så trång att den knappade mot kanterna. En kolumn ger
+       varje uppgift hela bredden, så ingenting bryts.
 
-       align-items: flex-start håller etiketterna
-       Email/Instagram/Öppettider i samma höjd, trots att
-       Öppettider har två rader. */
+       Vänsterjustering istället för centrerad: blocken har olika
+       bredder, och centrerat lät etiketterna Email/Instagram/
+       Öppettider ligga på olika x-position. Vänsterkant ger en
+       tydlig linje att läsa ner längs. */
     .contact-box {
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-direction: column;
+        flex-wrap: wrap;
 
-        justify-content: space-evenly;
-        gap: 0;
+        gap: 30px;
 
         align-items: flex-start;
 
-        text-align: center;
+        text-align: left;
     }
 
-    /* Lite mindre text så att alla tre blocken ryms på en 320px
-       bred telefon. */
     .contact-box h2 {
         font-size: 15px;
     }
@@ -3421,13 +3416,9 @@ body {
 
 @media (max-width: 480px) {
 
-    /* Smalaste telefonerna: raden måste krympa ännu en grad för att
-       alla tre blocken ska få plats. mätning på 320px gav ca 10px
-       för mycket bredd med 13px/15px och 10px gap. */
-    .contact-box {
-        gap: 6px;
-    }
-
+    /* Kolumnen har ingen krav på att innehållet ska rymmas i bredd,
+       så små telefoner behöver inte mindre text. Sänkningen av
+       rubrikerna (15 -> 14px) är kvar från tidigare. */
     .contact-box h2 {
         font-size: 14px;
     }
