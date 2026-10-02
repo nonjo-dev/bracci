@@ -3,7 +3,7 @@
 Statisk webbplats publicerad med GitHub Pages. Fem sidor, ingen
 backend, inget byggsteg.
 
-Adress: `https://DITT-NAMN.github.io/bracci/`
+Adress: `https://nonjo-dev.github.io/bracci/`
 
 | Sida | Fil | Sökväg på sajten |
 |---|---|---|
